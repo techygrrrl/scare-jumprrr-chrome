@@ -1,0 +1,33 @@
+{
+  "name": "Twitch Scare Jumprrr",
+  "version": "0.0.1",
+  "description": "Evade jump scare sounds on Twitch! 😱",
+  "icons": {
+    "48": "icons/sound-jumprrr-48.png",
+    "128": "icons/sound-jumprrr-128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.twitch.tv/*",
+        "https://twitch.tv/*"
+      ],
+      "js": [
+        "./content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [],
+  "manifest_version": 3
+}
